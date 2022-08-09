@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teethcare-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: teethcare-backend
+  template:
+    metadata:
+      labels:
+        app: teethcare-backend
+    spec:
+      containers:
+      - name: teethcare-backend
+        image: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend:dev
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+
+
+

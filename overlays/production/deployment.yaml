@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teethcare-backend
+spec:
+  template:
+    replicas: 2
+    spec:
+      containers:
+      - name: teethcare-backend
+        env: 
+          - name: DB_TYPE
+            value: teethcare-prod
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: sql-secret
+                key: sapassword
