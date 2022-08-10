@@ -6,12 +6,13 @@ spec:
   selector:
     matchLabels:
       app: teethcare-backend
+  replicas: 3
+  strategy:
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+      type: RollingUpdate
   template:
-    replicas: 3
-    strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
     spec:
       containers:
       - name: teethcare-backend
