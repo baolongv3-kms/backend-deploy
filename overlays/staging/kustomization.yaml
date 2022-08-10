@@ -1,8 +1,9 @@
 bases:
  - ../../base
+namePrefix: staging-
+namespace: staging
 patchesStrategicMerge:
  - deployment.yaml
-namePrefix: staging-
 images:
   - name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
     newTag: 1.0.0
