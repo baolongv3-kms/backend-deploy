@@ -4,6 +4,8 @@ metadata:
   name: teethcare-backend
   namespace: qa
 spec:
+  selector:
+    name: teethcare-backend
   template:
     spec:
       containers:

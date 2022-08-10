@@ -4,6 +4,8 @@ metadata:
   name: teethcare-backend
   namespace: prod
 spec:
+  selector:
+    name: teethcare-backend
   template:
     replicas: 2
     spec:

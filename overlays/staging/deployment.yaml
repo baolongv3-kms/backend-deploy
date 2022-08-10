@@ -4,6 +4,8 @@ metadata:
   name: teethcare-backend
   namespace: staging
 spec:
+  selector:
+    name: teethcare-backend
   template:
     spec:
       containers:
