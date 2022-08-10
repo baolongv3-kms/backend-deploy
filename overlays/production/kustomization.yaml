@@ -5,5 +5,5 @@ patchesStrategicMerge:
 namePrefix: production-
 
 images:
-  name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
-  newTag: 1.0.0
+  - name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
+    newTag: 1.0.0
