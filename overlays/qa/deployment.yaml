@@ -5,7 +5,8 @@ metadata:
   namespace: qa
 spec:
   selector:
-    name: teethcare-backend
+    matchLabels:
+      app: teethcare-backend
   template:
     spec:
       containers:

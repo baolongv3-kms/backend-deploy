@@ -5,7 +5,8 @@ metadata:
   namespace: prod
 spec:
   selector:
-    name: teethcare-backend
+    matchLabels:
+      app: teethcare-backend
   template:
     replicas: 2
     spec:
