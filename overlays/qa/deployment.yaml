@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: teethcare-backend
   namespace: qa
+  labels:
+    app: teethcare-backend
 spec:
   selector:
     matchLabels:
