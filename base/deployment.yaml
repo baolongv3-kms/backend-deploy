@@ -17,7 +17,7 @@ spec:
         image: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend:dev
         resources:
           limits:
-            memory: "1024Mi"
+            memory: "500Mi"
             cpu: "100m"
         ports:
         - containerPort: 8080
