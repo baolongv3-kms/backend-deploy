@@ -40,7 +40,7 @@ spec:
           value: fluent.conf
         - name: FLUENTD_ARGS
           value: -c /fluentd/etc/fluent.conf
-        image: qiiq/docker-fluentd-gelf
+        image: suzukishunsuke/fluentd-gelf
         volumeMounts:
           - name: applog
             mountPath: /var/log/teethcare/
