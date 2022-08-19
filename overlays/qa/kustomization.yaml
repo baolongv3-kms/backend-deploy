@@ -1,12 +1,13 @@
-bases:
- - ../../base
 # patchesStrategicMerge:
 #  - deployment.yaml
 namePrefix: qa-
 namespace: qa
 patchesStrategicMerge:
- - deployment.yaml
+- deployment.yaml
 images:
-  - name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
-    newTag: 0.0.1
-
+- name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
+  newTag: 0.0.1-CI-CD
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base

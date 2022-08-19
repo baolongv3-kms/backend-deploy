@@ -1,9 +1,11 @@
-bases:
- - ../../base
 namePrefix: staging-
 namespace: staging
 patchesStrategicMerge:
- - deployment.yaml
+- deployment.yaml
 images:
-  - name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
-    newTag: 0.0.1
+- name: 553061678476.dkr.ecr.ap-southeast-1.amazonaws.com/backend
+  newTag: 0.0.1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
