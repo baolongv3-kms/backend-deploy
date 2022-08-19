@@ -28,30 +28,30 @@ spec:
               secretKeyRef:
                 name: sql-secret
                 key: sapassword
-      - name: fluentd
-        resources:
-          limits:
-            memory: "300Mi"
-            cpu: "100m"
-        env: 
-        - name: FLUENT_UID
-          value: root
-        - name: FLUENTD_CONF
-          value: fluent.conf
-        - name: FLUENTD_OPT
-          value: -c /fluentd/etc/fluent.conf
+      # - name: fluentd
+      #   resources:
+      #     limits:
+      #       memory: "300Mi"
+      #       cpu: "100m"
+      #   env: 
+      #   - name: FLUENT_UID
+      #     value: root
+      #   - name: FLUENTD_CONF
+      #     value: fluent.conf
+      #   - name: FLUENTD_OPT
+      #     value: -c /fluentd/etc/fluent.conf
         
-        image: baolongv3/fluentd-gelf
-        volumeMounts:
-          - name: applog
-            mountPath: /var/log/teethcare/
-          - name: fdconf 
-            mountPath: /fluentd/etc/
-      volumes:
-      - name: applog
-        emptyDir: {}
-      - name: fdconf
-        configMap:
-          name: fluentd-config
+      #   image: baolongv3/fluentd-gelf
+      #   volumeMounts:
+      #     - name: applog
+      #       mountPath: /var/log/teethcare/
+      #     - name: fdconf 
+      #       mountPath: /fluentd/etc/
+      # volumes:
+      # - name: applog
+      #   emptyDir: {}
+      # - name: fdconf
+      #   configMap:
+      #     name: fluentd-config
         
           
