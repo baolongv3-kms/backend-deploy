@@ -40,7 +40,7 @@ spec:
           value: fluent.conf
         - name: FLUENTD_ARGS
           value: -c /fluentd/etc/fluent.conf
-        image: suzukishunsuke/fluentd-gelf
+        image: baolongv3/fluentd-gelf
         volumeMounts:
           - name: applog
             mountPath: /var/log/teethcare/
