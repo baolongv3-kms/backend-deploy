@@ -37,9 +37,9 @@ spec:
         - name: FLUENT_UID
           value: root
         - name: FLUENT_CONF
-          value: fluent.conf
+          value: fluentd.conf
         - name: FLUENTD_ARGS
-          value: -c /fluentd/etc/fluent.conf
+          value: -c /fluentd/etc/fluentd.conf
         image: saravak/fluentd:elastic
         volumeMounts:
           - name: applog
