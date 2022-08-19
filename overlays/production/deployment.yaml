@@ -37,10 +37,10 @@ spec:
         - name: FLUENT_UID
           value: root
         - name: FLUENT_CONF
-          value: fluentd.conf
+          value: fluent.conf
         - name: FLUENTD_ARGS
-          value: -c /fluentd/etc/fluentd.conf
-        image: saravak/fluentd:elastic
+          value: -c /fluentd/etc/fluent.conf
+        image: qiiq/docker-fluentd-gelf
         volumeMounts:
           - name: applog
             mountPath: /var/log/teethcare/
