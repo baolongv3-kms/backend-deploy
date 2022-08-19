@@ -41,7 +41,7 @@ spec:
         - name: FLUENTD_OPT
           value: -c /fluentd/etc/fluent.conf
         
-        image: qiiq/fluentd-gelf
+        image: globalgames/fluentd-gelf:latest
         volumeMounts:
           - name: applog
             mountPath: /var/log/teethcare/
