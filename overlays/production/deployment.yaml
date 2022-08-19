@@ -16,7 +16,11 @@ spec:
     spec:
       containers:
       - name: teethcare-backend
-        env: 
+        env:
+          - name: LOGGING_FILE_PATH
+            value: /var/log/teethcare
+          - name: LOGGING_FILE_NAME
+            value: teethcare-prod.log
           - name: DB_TYPE
             value: teethcare-prod
           - name: DB_PASSWORD
@@ -24,3 +28,29 @@ spec:
               secretKeyRef:
                 name: sql-secret
                 key: sapassword
+      - name: fluentd
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        env: 
+        - name: FLUENT_UID
+          value: root
+        - name: FLUENT_CONF
+          value: fluent.conf
+        - name: FLUENTD_ARGS
+          value: -c /fluentd/etc/fluent.conf
+        image: saravak/fluentd:elastic
+        volumeMounts:
+          - name: applog
+            mountPath: /var/log/teethcare/
+          - name: fdconf 
+            mountPath: /fluentd/etc/
+      volumes:
+      - name: applog
+        emptyDir: {}
+      - name: fdconf
+        configMap:
+          name: fluentd-config
+        
+          
